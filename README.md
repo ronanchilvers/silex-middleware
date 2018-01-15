@@ -21,6 +21,7 @@ Configuration details varies depending on the middleware in use. See the notes b
 This middleware adds [HSTS or Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) headers to every response.
 
 ```php
+// Add with defaults
 $app->after(new Ronanchilvers\Silex\Middleware\Hsts());
 
 // Or - set the max-age to 1 day / 86400 seconds
