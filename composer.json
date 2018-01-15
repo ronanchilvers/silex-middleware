@@ -1,0 +1,20 @@
+{
+    "name": "ronanchilvers/silex-middleware",
+    "description": "Some useful middleware for silex",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ronan Chilvers",
+            "email": "ronan@thelittledot.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ronanchilvers\\Silex\\Middleware\\": "src/"
+        }
+    }
+}
