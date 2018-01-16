@@ -51,7 +51,7 @@ $app->after(
 
 This middleware adds a [Referrer-Policy](https://www.w3.org/TR/referrer-policy/) header to responses. This header has a single policy directive as its value which must be one of:
 
- - &gt;empty string&lt;
+ - &lt;empty string&gt;
  - no-referrer
  - no-referrer-when-downgrade
  - same-origin
