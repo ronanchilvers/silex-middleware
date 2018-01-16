@@ -14,7 +14,37 @@ Configuration details varies depending on the middleware in use. See the notes b
 
 ## Available Middlewares
 
+* [CSP (Content Security Policy)](#csp)
 * [HSTS (Strict Transport Security)](#hsts)
+
+### CSP
+
+This middleware allows you to add a Content-Security-Policy header to responses. It uses the [```paragonie/csp-builder```](https://github.com/paragonie/csp-builder) library to build the headers. You can pass your policy as an array as the first constructor argument.
+
+```php
+$app->after(
+    new Ronanchilvers\Silex\Middleware\Csp([
+        'default-src' => [
+            'self' => true,
+            'unsafe-inline' => true,
+        ],
+        'style-src' => [
+            'allow' => [
+                'https://fonts.googleapis.com'
+            ],
+            'self' => true,
+            'unsafe-inline' => true,
+        ],
+        'font-src' => [
+            'allow' => [
+                'https://fonts.gstatic.com/'
+            ],
+            'self' => true
+        ],
+        'report-only' => true,
+    ])
+);
+```
 
 ### HSTS
 
