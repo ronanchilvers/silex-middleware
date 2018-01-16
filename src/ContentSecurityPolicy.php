@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Ronan Chilvers <ronan@d3r.com>
  */
-class Csp implements MiddlewareInterface
+class ContentSecurityPolicy implements MiddlewareInterface
 {
     /**
      * @var ParagonIE\CSPBuilder\CSPBuilder

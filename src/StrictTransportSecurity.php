@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Ronan Chilvers <ronan@d3r.com>
  */
-class Hsts implements MiddlewareInterface
+class StrictTransportSecurity implements MiddlewareInterface
 {
     /**
      * @var int
