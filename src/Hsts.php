@@ -2,6 +2,7 @@
 
 namespace Ronanchilvers\Silex\Middleware;
 
+use Ronanchilvers\Silex\Middleware\MiddlewareInterface;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Ronan Chilvers <ronan@d3r.com>
  */
-class Hsts
+class Hsts implements MiddlewareInterface
 {
     /**
      * @var int
