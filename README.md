@@ -15,6 +15,7 @@ Configuration details varies depending on the middleware in use. See the notes b
 ## Available Middlewares
 
 * [Content Security Policy](#content-security-policy)
+* [Referrer Policy](#referrer-policy)
 * [Strict Transport Security](#strict-transport-security)
 
 ### Content Security Policy
@@ -50,7 +51,7 @@ $app->after(
 
 This middleware adds a [Referrer-Policy](https://www.w3.org/TR/referrer-policy/) header to responses. This header has a single policy directive as its value which must be one of:
 
- - <empty string>
+ - &gt;empty string&lt;
  - no-referrer
  - no-referrer-when-downgrade
  - same-origin
