@@ -12,6 +12,9 @@
     "require": {
         "silex/silex": "^2.2"
     },
+    "suggests": {
+        "paragonie/csp-builder": "If you want to enable the CSP middleware"
+    },
     "autoload": {
         "psr-4": {
             "Ronanchilvers\\Silex\\Middleware\\": "src/"
