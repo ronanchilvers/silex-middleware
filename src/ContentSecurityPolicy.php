@@ -14,9 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 class ContentSecurityPolicy implements MiddlewareInterface
 {
     /**
-     * @var ParagonIE\CSPBuilder\CSPBuilder
+     * @var array
      */
-    protected $builder;
+    protected $policies;
 
     /**
      * Class constructor
@@ -25,7 +25,7 @@ class ContentSecurityPolicy implements MiddlewareInterface
      */
     public function __construct(array $policies)
     {
-        $this->builder = new CSPBuilder($policies);
+        $this->policies = $policies;
     }
 
     /**
@@ -33,7 +33,8 @@ class ContentSecurityPolicy implements MiddlewareInterface
      */
     public function __invoke(Request $request, Response $response)
     {
-        $headers = $this->builder->getHeaderArray();
+        $builder = new CSPBuilder($this->policies);
+        $headers = $builder->getHeaderArray();
         foreach ($headers as $header => $value) {
             $response->headers->set($header, $value);
         }
